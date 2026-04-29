@@ -1,0 +1,64 @@
+
+ Justification: Why Monolithic Architecture is the Best Choice
+
+Monolithic architecture is the most appropriate choice for this project considering its **scale, team size, development timeline, and performance requirements**.
+
+
+1. Scalability
+
+The project is developed primarily for **academic demonstration and evaluation**, where the expected number of users is relatively small (approximately **5–10 concurrent users**).
+
+A monolithic system deployed on a cloud platform such as **Vercel** can easily handle this level of traffic without requiring distributed services. While architectures such as microservices provide higher scalability for large enterprise applications, such complexity is unnecessary for a student-level project.
+
+Therefore, monolithic architecture provides **sufficient scalability while keeping the system simple and manageable**.
+
+
+2. Maintainability
+
+Monolithic architecture is easier to maintain for **small development teams**.
+
+Since the entire application exists within a single codebase, developers can easily understand the flow of the system from the **frontend interface to the backend logic and database operations**. Debugging becomes easier because developers can trace the issue within the same application instead of investigating multiple distributed services.
+
+For a small team working within a semester timeline, this architecture significantly improves **maintainability and development efficiency**.
+
+
+3. Performance
+
+Monolithic applications provide **efficient performance for small-scale systems** because all internal components communicate within the same application process.
+
+For example, when the order module needs product information, it can directly query the product model from the database.
+
+Example:
+
+javascript
+const product = await Product.findById(productId);
+
+Unlike microservices, where services communicate through HTTP requests over a network, monolithic architecture avoids this network overhead. This results in **faster response times and improved performance for the system's scale**.
+
+4. Faster Development
+
+The project is developed within a **limited academic timeframe (approximately one semester)**. Monolithic architecture allows the development team to focus on implementing application features rather than configuring complex infrastructure.
+
+All modules such as authentication, product management, cart, and orders can be developed within the same project environment, enabling **faster development and integration**.
+
+
+
+5. Simple Deployment on Vercel
+
+The application can be easily deployed using **Vercel**, which provides a simple cloud hosting platform suitable for student projects.
+
+Deployment structure:
+
+* **Frontend (React.js):** Hosted on Vercel
+* **Backend API (Node.js / Express.js):** Deployed as serverless functions on Vercel
+* **Database:** MongoDB Atlas cloud database
+
+This setup allows the entire system to be deployed without managing complex infrastructure or servers. The simplicity of deployment makes monolithic architecture **highly practical for academic projects**.
+
+Conclusion
+
+The **Monolithic Architecture** is the most appropriate architectural style for the Online Shopping Portal project. All system components operate within a unified application structure and share a centralized database.
+
+This architecture provides **simplicity, maintainability, efficient performance, and easy deployment on platforms like Vercel**, making it well suited for a student project developed within a limited timeframe.
+
+---
